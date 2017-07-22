@@ -7,7 +7,9 @@ RSpec.feature "CreateAccounts", type: :feature do
     visit root_path
 
     #click Register
-    click_link "Register"
+    click_link "Login"
+
+    click_link "Sign Up"
 
     #fill out with info
       fill_in "Username", with: "Ned_Stark"
