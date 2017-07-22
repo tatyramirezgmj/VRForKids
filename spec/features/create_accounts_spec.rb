@@ -15,12 +15,15 @@ RSpec.feature "CreateAccounts", type: :feature do
       fill_in "Username", with: "Ned_Stark"
       fill_in "Email", with: "Ned@StarkEnterprises.co"
       fill_in "Password", with: "TheNorthRemembers"
-      fill_in "Confirm Password", with: "TheNorthRememebers"
+      # fill_in "Confirm Password", with: "TheNorthRememebers"
 
     #click "create account"
-      click_button "Signup VR Adventures"
+      click_button "Signup for Lulz"
     #return to home
-      expect(page).to have_content "Account Successfully Created"
+    ["Ned_Stark", "Ned@StarkEnterprises.co", "TheNorthRemembers"].each do |content|
+      expect(page).to have_content content
+    end 
+
     #click index
 
 
