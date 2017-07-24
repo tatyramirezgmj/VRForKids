@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # get 'dash/enter'
-
+  # get 'games/play/:id'
   get 'dash/dashboard'
 
   root 'static#welcome'

@@ -6,4 +6,6 @@ class User < ApplicationRecord
     # stretches: 12 #hash decrypt speed
         #This is all applied for devise to access the database table. Boo, fucking, hoo.
         #make sure to amend the commas so that it doesn't threw an "Unexpected end" error
+  has_many :games
+  has_many :game_sessions, through: :games
 end
