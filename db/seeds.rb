@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+# created_at: Time.now, updated_at: (Time.now + 30.minutes),
+# created_at: Time.now, updated_at: (Time.now + 30.minutes),
+# created_at: Time.now, updated_at: (Time.now + 30.minutes),
 
 User.create(email: "Tyrion@KingsLanding.co", encrypted_password: "valid_password")
 User.create(email: "Cersei@KingsLanding.co", encrypted_password: "valid_password")
@@ -14,4 +18,6 @@ Game.create(title: "Espidi Capriles", body: "Move fast like Sonic", url: "http:/
 Game.create(title: "Got Dem Feelz", body: "Move fast like Sonic", url: "http://newgrounds.com/")
 Game.create(title: "Not That DS Mario Game", body: "Move fast like Sonic", url: "http://newgrounds.com/")
 
-GameSession.create(score: "1000", created_at: Time.now, updated_at: (Time.now + 30.minutes), game_id:1 , user_id:1)
+GameSession.create(score: "1000",  games_id:1 , users_id:1)
+# GameSession.create(score: "2000",  games_id:2 , users_id:1)
+# GameSession.create(score: "3000",  games_id:3 , users_id:1)
