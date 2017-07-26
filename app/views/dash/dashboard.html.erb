@@ -1,0 +1,12 @@
+
+<% if user_signed_in?%>
+<a>Navbar goes here </a>
+
+<a>Hello, <%= current_user.email %></a>
+
+<p>Play Babby Games</p>
+
+<%=link_to "Games Index", game_index_path %>
+<% else %>
+<% controller.redirect_to root_path %>
+<% end %>

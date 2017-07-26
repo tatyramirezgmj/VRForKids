@@ -1,0 +1,23 @@
+<h1>PLAY DA GAMES, MON</h1>
+<h2>This is a dummy page</h2>
+
+
+<% GameSession.new %>
+  <% time_elapsed = datetime.now %>
+  <% form_with(model: game_session, action: store, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.text_field :score, id: :game_session_score %>
+  </div>
+<a href="#">Click here to end session (Gamesession logout path)></a>
+<% GameSession.update %>
+
+
+
+
+<% if false %>
+LIVIO'S NOTES
+  We need to store the session at the beginning
+    and "update it" with the score at the end
+      in order to use both input fields for time calculation.
+<% end %>
