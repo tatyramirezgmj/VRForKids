@@ -5,13 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#
-# created_at: Time.now, updated_at: (Time.now + 30.minutes),
-# created_at: Time.now, updated_at: (Time.now + 30.minutes),
-# created_at: Time.now, updated_at: (Time.now + 30.minutes),
-GameSession.create(score: "1000",  games_id:1 , users_id:1)
-GameSession.create(score: "2000",  games_id:2 , users_id:1)
-GameSession.create(score: "3000",  games_id:3 , users_id:1)
+# #
+
+GameSession.create(score: "1000",  game_id:1, user_id:1, created_at: Time.now, updated_at: Time.now)
+GameSession.create(score: "2000",  game_id:2, user_id:1, created_at: Time.now, updated_at: Time.now)
+GameSession.create(score: "3000",  game_id:3, user_id:1, created_at: Time.now, updated_at: Time.now)
 
 User.create(email: "Tyrion@KingsLanding.co", encrypted_password: "valid_password")
 User.create(email: "Cersei@KingsLanding.co", encrypted_password: "valid_password")
