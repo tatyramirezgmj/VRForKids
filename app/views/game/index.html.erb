@@ -1,19 +1,15 @@
 <h1>ALL DA GAEMZ HEAH, BRUDDA WIT DA BEER CAN</h1>
 
-<h2>HTML Index</h2>
-<%= link_to "Speed Game", game_play_path(1) %>
-  <img src= "https://24.media.tumblr.com/9e640005ac149f89808416d84468def0/tumblr_n6599mJpVo1shlg3vo1_500.gif"></li>
-<%= link_to "Emotion Game", game_play_path(2) %>
-  <img src="https://s-media-cache-ak0.pinimg.com/originals/76/96/da/7696dac1f771e950ce22c5c6fb185480.gif"></li>
-<%= link_to "Attention Game", game_play_path(3) %>
-  <img src="https://media.giphy.com/media/hjB0wCLycqKbK/giphy.gif"></li>
 
 
 <h2>Ruby Index</h2>
 
 <% Game.all.each do |game| %>
-<%= @game.game %>
-<%= link_to "Play", game_play_path %>
+<h2><%= game.title %></h2>
+<p><%= game.body %></p>
+<p><%= game.url %></p>
+<%= link_to "Play", game_play_path(game_id)%>
+
 <% end %>
 
 <h1>DO IT FOR DA BABBIES</h1>

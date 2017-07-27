@@ -1,6 +1,6 @@
 class GameSessionController < ApplicationController
-  def index
-    #show all?
+  def start
+    @session = GameSession.new
   end
 
   def store

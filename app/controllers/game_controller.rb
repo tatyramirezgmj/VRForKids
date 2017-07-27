@@ -1,14 +1,18 @@
 class GameController < ApplicationController
-  def play
-    # @games = Game[:id]
-  end
-
-  def show
-    @game = Game[:id]
-  end
 
   def index
     @games = Game.all
   end
 
+  def play
+    @game = Game.find(params[:id])
+  end
+
+  def show
+    @game = Game.find(params[:id])
+  end
+
+  def game_params
+    params.require(:game).permit(:title, :body, :url)
+  end
 end
