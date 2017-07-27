@@ -7,5 +7,8 @@ class GameSessionController < ApplicationController
     #store current game session into databse to not be called back again.
   end
 
+  def show
+    @sessions = GameSession.all
+  end 
 
 end

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   get 'game/:id/show', to: 'game#show', as:'game_show'
 
-  get 'game/:id/play', to: 'game_session#start', as:'session_start'
-
+  get 'dashboard/game_sessions/', to: 'game_session#show', as: 'sessions_show'
+  
+  post 'game/:id/play', to: 'game_session#start', as:'session_start'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
