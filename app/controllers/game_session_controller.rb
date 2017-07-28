@@ -4,11 +4,27 @@ class GameSessionController < ApplicationController
   end
 
   def store
-    #store current game session into databse to not be called back again.
+    @session = GameSession.create(session_params)
+    @session[:user_id]= current_user.id
+    @session[:game_id]= Game.find(params[:id])
+
+    respond_to do |sesh|
+      @session.save
+
+      sesh.html { redirect_to sessions_index_path, notice: 'Session Stored.' }
+      sesh.json { render :show, status: :created, location: @session }
+    end
   end
 
-  def show
+  def index
     @sessions = GameSession.all
-  end 
+  end
+
+
+private
+
+  def session_params
+    params.require(:game_session).permit(:score)
+  end
 
 end
