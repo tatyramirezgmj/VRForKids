@@ -4,7 +4,7 @@ class GameSessionController < ApplicationController
   end
 
   def store
-    @session = GameSession.create(session_params)
+    @session = GameSession.new(session_params)
     @session[:user_id]= current_user.id
     @session[:game_id]= Game.find(params[:id])
 
