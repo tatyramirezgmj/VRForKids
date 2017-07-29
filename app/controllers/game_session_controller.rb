@@ -5,11 +5,11 @@ class GameSessionController < ApplicationController
 
   def store
     @session = GameSession.new(session_params)
-    @session[:user_id]= current_user.id
-    @session[:game_id]= Game.find(params[:id])
+    @session.user_id = current_user.id
+    @session.game_id = game.id
 
     respond_to do |sesh|
-      @session.save
+      @session.save!
 
       sesh.html { redirect_to sessions_index_path, notice: 'Session Stored.' }
       sesh.json { render :show, status: :created, location: @session }
@@ -24,7 +24,7 @@ class GameSessionController < ApplicationController
 private
 
   def session_params
-    params.require(:game_session).permit(:score)
+    params.require(:game_session).permit(:score, :user_id, :game_id)
   end
 
 end

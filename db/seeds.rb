@@ -7,10 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # #
 
-GameSession.create(score: "1000",  game_id:1, user_id:1, created_at: Time.now, updated_at: Time.now)
-GameSession.create(score: "2000",  game_id:2, user_id:1, created_at: Time.now, updated_at: Time.now)
-GameSession.create(score: "3000",  game_id:3, user_id:1, created_at: Time.now, updated_at: Time.now)
-
 User.create(email: "Tyrion@KingsLanding.co", encrypted_password: "valid_password")
 User.create(email: "Cersei@KingsLanding.co", encrypted_password: "valid_password")
 User.create(email: "Arya@HouseStark.co", encrypted_password: "valid_password")
@@ -18,3 +14,7 @@ User.create(email: "Arya@HouseStark.co", encrypted_password: "valid_password")
 Game.create(title: "Espidi Capriles", body: "Move fast like Sonic", url: "http://newgrounds.com/")
 Game.create(title: "Got Dem Feelz", body: "Move fast like Sonic", url: "http://newgrounds.com/")
 Game.create(title: "Not That DS Mario Game", body: "Move fast like Sonic", url: "http://newgrounds.com/")
+
+GameSession.create(score: "1000",  game_id:1, user_id:1, created_at: Time.now, updated_at: Time.now)
+GameSession.create(score: "2000",  game_id:2, user_id:1, created_at: Time.now, updated_at: Time.now)
+GameSession.create(score: "3000",  game_id:3, user_id:1, created_at: Time.now, updated_at: Time.now)
