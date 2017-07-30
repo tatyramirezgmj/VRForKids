@@ -1,2 +1,7 @@
 class ReactGameController < ApplicationController
-end 
+
+  def show
+    
+  end
+
+end
