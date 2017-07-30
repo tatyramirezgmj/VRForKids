@@ -1,0 +1,2 @@
+class ReactGameController < ApplicationController
+end 

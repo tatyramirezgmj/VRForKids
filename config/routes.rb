@@ -9,6 +9,15 @@ Rails.application.routes.draw do
   get 'static/welcome'
   get 'game/index'
 
+  get 'react_game/game'
+  get 'game1' => 'react_game#show', id: 1
+
+
+  # get 'game/game'
+  # get 'game' => 'games#show', id: 1
+  # get 'game2' => 'games#show', id: 2
+  # get 'game3' => 'games#show', id: 3
+
   get 'game/:id/show', to: 'game#show', as:'game_show'
 
   get 'dashboard/game_sessions/', to: 'game_session#index', as: 'sessions_index'
