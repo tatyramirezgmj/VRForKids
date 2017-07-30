@@ -1,9 +1,15 @@
-<h1>GameSession Active</h1>
-<h2>This page is still under construction</h2>
-
-
-
-<% if current_game true%>
-  <a href="#">Play </a>
-  <% else "Please" %>
-<% end %>
+<html>
+  <head>
+    <title>SoundsGame</title>
+    <style>body { margin: 0; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <script>
+      ReactVR.init(
+        '../index.bundle?platform=vr&dev=true',
+        document.body
+      );
+    </script>
+  </body>
+</html>
