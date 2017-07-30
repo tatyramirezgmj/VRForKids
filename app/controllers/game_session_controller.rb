@@ -6,7 +6,7 @@ class GameSessionController < ApplicationController
   def store
     @session = GameSession.new(session_params)
     @session.user_id = current_user.id
-    @session.game_id = game.id
+    @session.game_id = params[:id]
 
     respond_to do |sesh|
       @session.save!
