@@ -1,0 +1,11 @@
+<h1>This is a game session</h1>
+
+<% @session[:user_id]= current_user.id  %>
+<% @session[:game_id]= Game.find(params[:id]) %>
+<%= form_for @session, url: session_start_path do |f| %>
+<p>
+  <%= f.label(:score, "Enter Score:")%>
+  <%= f.text_area :score %>
+</p>
+<p><%= f.submit("Store Session") %></p>
+<% end %>

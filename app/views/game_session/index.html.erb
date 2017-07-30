@@ -1,0 +1,20 @@
+<h1>GameSessions - the Stats Screen</h1>
+
+
+
+<table>
+  <th>Session ID </th>
+  <th>Game ID</th>
+  <th>Date Played</th>
+  <% @sessions.each do |sesh| %>
+  <tr>
+    <td><%= sesh.id %></td>
+    <td><%= Game.find(sesh.game_id)[:title] %></td>
+    <td><%= sesh.created_at %></td>
+  </tr>
+<% end %>
+</table>
+
+<% if false %>
+<%= (sesh.created_at - sesh.updated_at) %>
+<% end %>
