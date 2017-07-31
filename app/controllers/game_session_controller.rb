@@ -39,6 +39,10 @@ class GameSessionController < ApplicationController
     render json: { is_success: true, score: scores }
   end
 
+  def statistics
+    render stats_path
+  end
+
   def index
     @sessions = GameSession.all
   end
