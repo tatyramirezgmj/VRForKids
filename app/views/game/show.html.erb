@@ -1,9 +1,11 @@
-<h1>GameSession Active</h1>
-<h2>This page is still under construction</h2>
-
-
-
-<% if current_game true%>
-  <a href="#">Play </a>
-  <% else "Please" %>
-<% end %>
+<!-- <script src="../../public/index.bundle.js?platform=vr&dev=true"></script> -->
+<script>
+  // Initialize the React VR application
+  ReactVR.init(
+    // When you're ready to deploy your app, update this line to point to
+    // your compiled index.bundle.js
+    '../../public/index.bundle.js?platform=vr&dev=true',
+    // Attach it to the body tag
+    document.body
+  );
+</script>
