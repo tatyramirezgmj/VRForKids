@@ -1,5 +1,5 @@
 class GameSessionController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :store
+  skip_before_action :verify_authenticity_token
   def start
     @session = GameSession.new
   end
@@ -18,9 +18,10 @@ class GameSessionController < ApplicationController
   end
 
   def update_score
+
     game = GameSession.new
 
-    user_id = 1#current_user.id .... ned fix
+    user_id = 1 #current_user.id -> need to be fixed
 
 
     game.user_id = user_id
@@ -28,7 +29,13 @@ class GameSessionController < ApplicationController
     game.score = params[:score]
     game.save!
 
-    scores = GameSession.where(user_id: user_id, game_id: params[:id]).map(&:score).compact.inject(:+)
+    scores = GameSession.where(user_id: user_id, game_id: params[:id]).map(&:score).compact
+    render json: { is_success: true, score: scores }
+  end
+
+  def get_score
+    user_id = 1 #current_user.id -> need to be fixed
+    scores = GameSession.where(user_id: user_id, game_id: params[:id]).map(&:score).compact
     render json: { is_success: true, score: scores }
   end
 

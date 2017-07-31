@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'react_game/game'
   get 'soundsgame' => 'react_game#show', id: 1
+  # get 'game/:id/soundsgame' => 'react_game#show', id: 1, as: 'soundsgame' -> #current user id need to be fixed
 
   get 'game/:id/show', to: 'game#show', as:'game_show'
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   post 'game/:id/play', to: 'game_session#store', as:'session_store'
 
   get '/game/:id/update_score', to: 'game_session#update_score'
+  get '/game/:id/get_score', to: 'game_session#get_score'
 
-  get 'game/:id/sounds_game', to: 'game#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
