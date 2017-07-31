@@ -1,6 +1,5 @@
 <h1>Game Stats</h1>
-
+<h3> <%= current_user.email %> </h3>
 <%  GameSession.all.each do |gs| %>
-<h1><%= gs.user_id %></h1>
-<%= gs.score %>
+<p> <%= gs.score %> </p>
 <% end %>

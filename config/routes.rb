@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'react_game/game'
   get 'soundsgame' => 'react_game#show', id: 1, as: 'soundsgame'
-  # get 'game/:id/soundsgame' => 'react_game#show', id: 1, as: 'soundsgame' -> #current user id need to be fixed
+  # get 'game/:id/soundsgame' => 'react_game#show', id: 1, as: 'soundsgame'  #current user id need to be fixed
   get 'game_session/stats' => 'game_session#statistics', as: 'stats'
 
 
